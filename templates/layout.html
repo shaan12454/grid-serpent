@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Grid Serpent — Play Online</title>
+  <meta name="description" content="Grid Serpent: an extreme-mod Snake game with full-screen maps, obstacles, multi-fruit, and a scoreboard.">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <nav class="nav">
+    <a href="{{ url_for('index') }}">Home</a>
+    <a href="{{ url_for('play') }}">Play</a>
+    <a href="{{ url_for('scores') }}">Scoreboard</a>
+    <a href="{{ url_for('about') }}">About</a>
+    <a href="{{ url_for('privacy') }}">Privacy</a>
+  </nav>
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+  <footer class="footer">Grid Serpent — built by Shaan • Free to play •</footer>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h1>Play — Grid Serpent</h1>
+<div class="game-info">
+  <label>Player name: <input id="playerName" placeholder="Player" maxlength="20"></label>
+  <label>Mode:
+    <select id="modeSelect">
+      <option value="classic">Classic (wrap edges)</option>
+      <option value="arena">Arena (walls)</option>
+      <option value="extreme">Extreme (many obstacles)</option>
+      <option value="speedrun">Speedrun (fast)</option>
+    </select>
+  </label>
+  <button id="startBtn">Start Game</button>
+  <button id="pauseBtn">Pause</button>
+  <span class="status">Score: <span id="score">0</span> | Length: <span id="length">1</span> | Time: <span id="time">0</span>s</span>
+</div>
+<div id="gameArea" class="game-area">
+  <canvas id="gameCanvas"></canvas>
+</div>
+<div class="controls-instructions">
+  <h3>Controls</h3>
+  <p>Arrow keys or WASD to move. Right-click toggles vibration on mobile (if supported).</p>
+</div>
+<script src="{{ url_for('static', filename='snake_extreme.js') }}"></script>
+{% endblock %}

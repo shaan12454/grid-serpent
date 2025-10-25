@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h1>Grid Serpent — Extreme Snake</h1>
+<p>Play Grid Serpent, a high-difficulty snake game with giant maps, walls, multi-fruits, and modifiers. No login required — anyone can play.</p>
+<section>
+  <h2>How to play</h2>
+  <ul>
+    <li>Use arrow keys or WASD to control your serpent.</li>
+    <li>Eat fruits to grow. Different fruits give different points and effects.</li>
+    <li>Avoid hitting walls or yourself. Some modes wrap the edges; others don't.</li>
+    <li>Submit your score and check the global leaderboard.</li>
+  </ul>
+</section>
+<p><a class="btn" href="{{ url_for('play') }}">Play Now — Jump In</a></p>
+{% endblock %}

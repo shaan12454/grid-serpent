@@ -1,0 +1,57 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1>Scoreboard</h1>
+
+<section>
+  <h2>Top Scores</h2>
+  <table class="scores-table">
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>Name</th>
+        <th>Score</th>
+        <th>Mode</th>
+        <th>Date (UTC)</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in top %}
+      <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ row['name'] }}</td>
+        <td>{{ row['score'] }}</td>
+        <td>{{ row['mode'] }}</td>
+        <td>{{ row['created_at'][:19] }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Your Recent Scores (this session)</h2>
+  <table class="scores-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Score</th>
+        <th>Mode</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in mine %}
+      <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ row['name'] }}</td>
+        <td>{{ row['score'] }}</td>
+        <td>{{ row['mode'] }}</td>
+        <td>{{ row['created_at'][:19] }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+{% endblock %}
